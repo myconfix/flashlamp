@@ -14,10 +14,12 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         flashlamp.cpp \
-    encoderthread.cpp
+    encoderthread.cpp \
+    microservothread.cpp
 
 HEADERS  += flashlamp.h \
-    encoderthread.h
+    encoderthread.h \
+    microservothread.h
 
 FORMS    += flashlamp.ui
 
