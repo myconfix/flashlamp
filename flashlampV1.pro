@@ -4,13 +4,13 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = flashlampV1
 TEMPLATE = app
-
+include(qmqttlibRPI/qmqtt.pri)
 
 SOURCES += main.cpp\
         flashlamp.cpp \

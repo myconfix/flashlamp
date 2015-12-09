@@ -14,5 +14,5 @@ void microservoThread::run()
     softPwmWrite(0,degree);
     this->msleep(20);
     }
-   // softPwmWrite(0,0);
+    //softPwmWrite(0,0);
 }
