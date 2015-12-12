@@ -24,6 +24,7 @@ public:
     microservoThread *microservothread;
     baseservoThread *baseservothread;
 
+
 public slots:
 
     void encoder_count();
@@ -36,6 +37,7 @@ public slots:
     void mqtt_sub(QString topic);
 
 
+
 private slots:
     void on_Base_Dial_sliderMoved(int position);
 
@@ -45,16 +47,24 @@ private slots:
     void on_Arm_Dial_valueChanged(int value);
 
     void on_Base_Dial_valueChanged(int value);
+    \
+
+signals:
+
+    void base_signal(int degree);
+    void arm_signal(int degree);
 
 private:
     Ui::flashlamp *ui;
     int i=0;
-    int Base_Dial_Last_Position;
-    int Arm_Dial_Last_Position;
-    int Base_degree=0;
+    int Base_Dial_Last_Degree=0;
+    int Base_Current_Degree=0;
+    int Arm_Dial_Last_Position=0;
 
     void moveArmServo(int value);
-    void moveBaseServo(int value);
+    void moveBaseServo(int degree);
+
+
 
     long map(long x, long in_min, long in_max,long out_min,long out_max);
 

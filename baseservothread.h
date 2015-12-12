@@ -12,9 +12,16 @@ public:
 
     int pwm=15;  //15=stop,pwm>15 rotate CW,pwm<15 rotate CCW
 
+
+    void set_pwm(int value);
+
+
+
 signals:
 
 public slots:
+        void encoder_count();
+private :
 
 };
 
