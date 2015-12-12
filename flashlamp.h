@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "encoderthread.h"
 #include "microservothread.h"
+#include "baseservothread.h"
 
 #include "wiringPi.h"
 #include "qmqttlibRPI/qmqtt.h"
@@ -21,7 +22,7 @@ public:
     ~flashlamp();
     encoderThread *encoderthread;
     microservoThread *microservothread;
-
+    baseservoThread *baseservothread;
 
 public slots:
 
@@ -43,11 +44,19 @@ private slots:
 
     void on_Arm_Dial_valueChanged(int value);
 
+    void on_Base_Dial_valueChanged(int value);
+
 private:
     Ui::flashlamp *ui;
     int i=0;
     int Base_Dial_Last_Position;
     int Arm_Dial_Last_Position;
+    int Base_degree=0;
+
+    void moveArmServo(int value);
+    void moveBaseServo(int value);
+
+    long map(long x, long in_min, long in_max,long out_min,long out_max);
 
     //PIN
     int EncoderPIN = 29;

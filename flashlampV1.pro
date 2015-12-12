@@ -15,11 +15,13 @@ include(qmqttlibRPI/qmqtt.pri)
 SOURCES += main.cpp\
         flashlamp.cpp \
     encoderthread.cpp \
-    microservothread.cpp
+    microservothread.cpp \
+    baseservothread.cpp
 
 HEADERS  += flashlamp.h \
     encoderthread.h \
-    microservothread.h
+    microservothread.h \
+    baseservothread.h
 
 FORMS    += flashlamp.ui
 

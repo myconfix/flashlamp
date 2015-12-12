@@ -49,10 +49,10 @@
     </rect>
    </property>
    <property name="minimum">
-    <number>8</number>
+    <number>0</number>
    </property>
    <property name="maximum">
-    <number>25</number>
+    <number>90</number>
    </property>
    <property name="sliderPosition">
     <number>20</number>
@@ -68,10 +68,10 @@
     </rect>
    </property>
    <property name="minimum">
-    <number>8</number>
+    <number>0</number>
    </property>
    <property name="maximum">
-    <number>25</number>
+    <number>360</number>
    </property>
    <property name="sliderPosition">
     <number>9</number>
