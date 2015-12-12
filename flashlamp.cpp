@@ -59,11 +59,11 @@ void flashlamp::encoder_count()
         Base_degree=Base_degree-15;
     }
     //Limit
-    if(baseservothread->degree > 360)
+    if(Base_degree > 360)
     {
-        baseservothread->degree =360;
-    }else if (baseservothread->degree <0) {
-        baseservothread->degree =0;
+        Base_degree =360;
+    }else if (Base_degree <0) {
+        Base_degree=0;
     }
     qDebug() << "Degree : " <<  Base_degree;
 }
@@ -147,18 +147,33 @@ void flashlamp::moveArmServo(int value){
 }
 void flashlamp::moveBaseServo(int value){
 //for Test
+    /*
     baseservothread->pwm = static_cast<int>(map(value,0,360,8,25));
     qDebug() << "PWM : " << baseservothread->pwm;
-    if(value != Base_Dial_Last_Position)
+    i   f(value != Base_Dial_Last_Position)
     {
         baseservothread->start();
          Base_Dial_Last_Position = value;
     }else{
         softPwmWrite(BaseServoPIN,0);
     }
+    */
 // Get Degree Value -> check current degree value from thread-->move to new degree value
+ /*   if (value-Base_degree > 0)
+    {
+       baseservothread->pwm = 16;
+        baseservothread->start();
+      while(Base_degree < value) {};
+        baseservothread->pwm =15;//stop
+    }else if (value-Base_degree <0)
+    {
+       baseservothread->pwm = 14;
+       baseservothread->start();
+       while(Base_degree > value) {};
+       baseservothread->pwm =15;//stop
+    }
+*/
 }
-
 long flashlamp::map(long x, long in_min, long in_max,long out_min,long out_max){
     return (x-in_min)*(out_max-out_min) / (in_max - in_min) + out_min;
 }
